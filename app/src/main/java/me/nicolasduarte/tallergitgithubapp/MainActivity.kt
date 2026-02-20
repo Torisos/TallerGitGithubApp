@@ -15,6 +15,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material3.Button
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -26,6 +27,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -57,21 +59,22 @@ fun Presentation() {
             painter = painter, contentDescription = null,
             modifier = Modifier
                 .size(150.dp)
-                .clip(CircleShape)
-                ,contentScale = ContentScale.Crop,
-                alignment = Alignment.Center
+                .clip(CircleShape), contentScale = ContentScale.Crop,
+            alignment = Alignment.Center
         )
 
         Spacer(modifier = Modifier.height(10.dp))
-        Text(text = "Nicolas Duarte",
+        Text(
+            text = "Nicolas Duarte",
             fontSize = 28.sp,
             fontWeight = FontWeight.Bold
-                )
+        )
 
-        Text(text = "Estudiante Ingenieria de Sistemas",
-            color = Color.Blue
-            ,fontSize = 15.sp,
-            )
+        Text(
+            text = "Estudiante Ingenieria de Sistemas",
+            color = Color.Blue,
+            fontSize = 15.sp,
+        )
 
         Spacer(modifier = Modifier.height(26.dp))
 
@@ -87,20 +90,67 @@ fun Presentation() {
 
             Spacer(modifier = Modifier.height(26.dp))
 
-            Text(text = "CORREO", fontSize = 12.sp, color = Color.Gray, fontWeight = FontWeight.Bold)
-
-            Text(text = "nduarte513@unab.edu.co", fontSize = 16.sp, color = Color.Blue,style = TextStyle(textDecoration = TextDecoration.Underline
+            Text(
+                text = "CORREO",
+                fontSize = 12.sp,
+                color = Color.Gray,
+                fontWeight = FontWeight.Bold
             )
+
+            Text(
+                text = "nduarte513@unab.edu.co",
+                fontSize = 16.sp,
+                color = Color.Blue,
+                style = TextStyle(
+                    textDecoration = TextDecoration.Underline
+                )
             )
 
             Spacer(modifier = Modifier.height(26.dp))
 
-            Text(text = "CIUDAD", fontSize = 12.sp, color = Color.Gray, fontWeight = FontWeight.Bold)
+            Text(
+                text = "CIUDAD",
+                fontSize = 12.sp,
+                color = Color.Gray,
+                fontWeight = FontWeight.Bold
+            )
 
             Text(text = "Bucaramanga, Colombia", fontSize = 16.sp, color = Color.Black)
 
         }
 
+        Spacer(modifier = Modifier.height(30.dp))
+
+        Column(modifier = Modifier.fillMaxWidth() ,horizontalAlignment = Alignment.CenterHorizontally)
+        {
+            Text(
+                text = "SOBRE MI MATERIA FAVORITA",
+                fontSize = 12.sp,
+                color = Color.Gray,
+                fontWeight = FontWeight.Bold)
+
+            Spacer(modifier = Modifier.height(10.dp))
+
+            Text(
+                text = "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos " +
+                        "de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias" +
+                        " desde el año 1500. No sólo sobrevivió 500 años, sino que tambien ingresó como " +
+                        "texto de relleno en documentos electrónicos" ,
+                fontSize = 16.sp,
+                textAlign = TextAlign.Center
+                , modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(25.dp,0.dp)
+            )
+
+            Spacer(modifier = Modifier.height(100.dp))
+
+            Button(modifier = Modifier.fillMaxWidth(), onClick = {},
+                content = {
+                    Text(text = "Contactar Conmigo")
+                })
+
+        }
 
     }
 
